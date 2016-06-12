@@ -40,7 +40,7 @@ bool vSSA::runOnFunction(Function &F) {
 	
 	// Iterate over all Basic Blocks of the Function, calling the function that creates sigma functions, if needed
 	for (Function::iterator Fit = F.begin(), Fend = F.end(); Fit != Fend; ++Fit) {
-		createSigmasIfNeeded(Fit);
+		createSigmasIfNeeded(&*Fit);
 	}
 	return true;
 }
