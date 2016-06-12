@@ -325,7 +325,7 @@ void InterProceduralRA<CGT>::MatchParametersAndReturnValues(
 
   for (i = 0, argptr = F.arg_begin(), e = F.arg_end(); argptr != e;
        ++i, ++argptr)
-    Parameters[i].first = argptr;
+    Parameters[i].first = &*argptr;
 
   // Check if the function returns a supported value type. If not, no return
   // value matching is done
